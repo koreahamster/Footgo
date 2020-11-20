@@ -4,8 +4,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {UserContext} from '../context/UserContext';
 
 import AuthStackScreens from './AuthStackScreens';
-import MainStackScreens from './MainStackScreens';
 import LoadingScreen from '../screens/LoadingScreen';
+import DrawStackScreen from './DrawStackScreen';
 
 export default AppStackScreens = () => {
   const AppStack = createStackNavigator();
@@ -16,7 +16,7 @@ export default AppStackScreens = () => {
       {user.isLoggedIn === null ? (
         <AppStack.Screen name="Loading" component={LoadingScreen} />
       ) : user.isLoggedIn ? (
-        <AppStack.Screen name="Main" component={MainStackScreens} />
+        <AppStack.Screen name="Main" component={DrawStackScreen} />
       ) : (
         <AppStack.Screen name="Auth" component={AuthStackScreens} />
       )}

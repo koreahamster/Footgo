@@ -4,7 +4,7 @@ import {View, Text, StyleSheet} from 'react-native';
 export default RankScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>Message Screen</Text>
+      <Text>Rank Screen</Text>
     </View>
   );
 };

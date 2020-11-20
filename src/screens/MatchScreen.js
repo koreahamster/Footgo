@@ -4,7 +4,7 @@ import {View, Text, StyleSheet} from 'react-native';
 export default TeamScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>Post Screen</Text>
+      <Text>Match Screen</Text>
     </View>
   );
 };

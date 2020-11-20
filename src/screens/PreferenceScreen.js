@@ -4,7 +4,7 @@ import {View, Text, StyleSheet} from 'react-native';
 export default PreferenceScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>Notification Screen</Text>
+      <Text>Preference Screen</Text>
     </View>
   );
 };

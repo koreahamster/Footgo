@@ -1,31 +1,31 @@
 import React from 'react';
 import {Dimensions} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-//import {Ionicons} from '@expo/vector-icons';
-
+//import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {
   faFutbol,
-  faUser,
-  faCalendarAlt,
+  faUsers,
+  faCalendarCheck,
   faCog,
   faTrophy,
 } from '@fortawesome/free-solid-svg-icons';
 
-import HomeScreen from '../screens/HomeScreen';
-import RankScreen from '../screens/RankScreen';
-import TeamScreen from '../screens/TeamScreen';
-import PreferenceScreen from '../screens/PreferenceScreen';
-import MatchScreen from '../screens/MatchScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import HomeStackScreen from './HomeStackScreen';
+import TeamStackScreen from './TeamStackScreen';
+import MatchStackScreen from './MatchStackScreen';
+import RankStackScreen from './RankStackScreen';
 export default MainStackScreens = () => {
   const MainStack = createBottomTabNavigator();
-
+  //const MainStack = createMaterialBottomTabNavigator();
   const tabBarOtions = {
     showLabel: false,
     style: {
       backgroundColor: 'white',
       paddingBottom: Dimensions.get('window').height < 800 ? 5 : 15,
+      // eslint-disable-next-line no-dupe-keys
+      backgroundColor: '#212121',
     },
   };
 
@@ -34,35 +34,35 @@ export default MainStackScreens = () => {
       tabBarOptions={tabBarOtions}
       screenOptions={({route}) => ({
         tabBarIcon: ({focused}) => {
-          if (route.name === 'Home') {
+          if (route.name === 'HomeStackScreen') {
             return (
               <FontAwesomeIcon
                 icon={faFutbol}
-                color={focused ? 'black' : 'grey'}
+                color={focused ? 'red' : 'white'}
                 size={26}
               />
             );
-          } else if (route.name === 'Team') {
+          } else if (route.name === 'TeamStackScreen') {
             return (
               <FontAwesomeIcon
-                icon={faUser}
-                color={focused ? 'black' : 'grey'}
+                icon={faUsers}
+                color={focused ? 'red' : 'white'}
                 size={26}
               />
             );
-          } else if (route.name === 'Match') {
+          } else if (route.name === 'MatchStackScreen') {
             return (
               <FontAwesomeIcon
-                icon={faCalendarAlt}
-                color={focused ? 'black' : 'grey'}
+                icon={faCalendarCheck}
+                color={focused ? 'red' : 'white'}
                 size={26}
               />
             );
-          } else if (route.name === 'Rank') {
+          } else if (route.name === 'RankStackScreen') {
             return (
               <FontAwesomeIcon
                 icon={faTrophy}
-                color={focused ? 'black' : 'grey'}
+                color={focused ? 'red' : 'white'}
                 size={26}
               />
             );
@@ -70,7 +70,7 @@ export default MainStackScreens = () => {
             return (
               <FontAwesomeIcon
                 icon={faCog}
-                color={focused ? 'black' : 'grey'}
+                color={focused ? 'red' : 'white'}
                 size={26}
               />
             );
@@ -78,23 +78,23 @@ export default MainStackScreens = () => {
         },
       })}>
       <MainStack.Screen
-        name="Home"
-        component={HomeScreen}
+        name="HomeStackScreen"
+        component={HomeStackScreen}
         options={{tabBarLabel: 'Home'}}
       />
       <MainStack.Screen
-        name="Team"
-        component={TeamScreen}
+        name="TeamStackScreen"
+        component={TeamStackScreen}
         options={{tabBarLabel: 'Team'}}
       />
       <MainStack.Screen
-        name="Match"
-        component={MatchScreen}
+        name="MatchStackScreen"
+        component={MatchStackScreen}
         options={{tabBarLabel: 'Match'}}
       />
       <MainStack.Screen
-        name="Rank"
-        component={RankScreen}
+        name="RankStackScreen"
+        component={RankStackScreen}
         options={{tabBarLabel: 'Rank'}}
       />
       <MainStack.Screen
