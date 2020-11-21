@@ -1,7 +1,6 @@
 import React from 'react';
 import {TouchableOpacity} from 'react-native';
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faBars} from '@fortawesome/free-solid-svg-icons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {useNavigation, DrawerActions} from '@react-navigation/native';
 
 const MenuButton = () => {
@@ -10,8 +9,8 @@ const MenuButton = () => {
 
   return (
     <TouchableOpacity onPress={openMenu}>
-      <FontAwesomeIcon
-        icon={faBars}
+      <MaterialCommunityIcons
+        name="menu"
         size={26}
         style={{marginRight: 10, color: 'white'}}
       />

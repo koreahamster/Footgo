@@ -1,24 +1,16 @@
 import React from 'react';
 import {Dimensions} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-//import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {
-  faFutbol,
-  faUsers,
-  faCalendarCheck,
-  faCog,
-  faTrophy,
-} from '@fortawesome/free-solid-svg-icons';
-
+import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import ProfileScreen from '../screens/ProfileScreen';
 import HomeStackScreen from './HomeStackScreen';
 import TeamStackScreen from './TeamStackScreen';
 import MatchStackScreen from './MatchStackScreen';
 import RankStackScreen from './RankStackScreen';
 export default MainStackScreens = () => {
-  const MainStack = createBottomTabNavigator();
-  //const MainStack = createMaterialBottomTabNavigator();
+  //const MainStack = createBottomTabNavigator();
+  const MainStack = createMaterialBottomTabNavigator();
   const tabBarOtions = {
     showLabel: false,
     style: {
@@ -36,40 +28,40 @@ export default MainStackScreens = () => {
         tabBarIcon: ({focused}) => {
           if (route.name === 'HomeStackScreen') {
             return (
-              <FontAwesomeIcon
-                icon={faFutbol}
+              <MaterialCommunityIcons
+                name="soccer"
                 color={focused ? 'red' : 'white'}
                 size={26}
               />
             );
           } else if (route.name === 'TeamStackScreen') {
             return (
-              <FontAwesomeIcon
-                icon={faUsers}
+              <MaterialCommunityIcons
+                name="microsoft-teams"
                 color={focused ? 'red' : 'white'}
                 size={26}
               />
             );
           } else if (route.name === 'MatchStackScreen') {
             return (
-              <FontAwesomeIcon
-                icon={faCalendarCheck}
+              <MaterialCommunityIcons
+                name="soccer-field"
                 color={focused ? 'red' : 'white'}
                 size={26}
               />
             );
           } else if (route.name === 'RankStackScreen') {
             return (
-              <FontAwesomeIcon
-                icon={faTrophy}
+              <MaterialCommunityIcons
+                name="trophy-outline"
                 color={focused ? 'red' : 'white'}
                 size={26}
               />
             );
           } else if (route.name === 'Preference') {
             return (
-              <FontAwesomeIcon
-                icon={faCog}
+              <MaterialCommunityIcons
+                name="stadium"
                 color={focused ? 'red' : 'white'}
                 size={26}
               />
@@ -80,27 +72,27 @@ export default MainStackScreens = () => {
       <MainStack.Screen
         name="HomeStackScreen"
         component={HomeStackScreen}
-        options={{tabBarLabel: 'Home'}}
+        options={{tabBarLabel: 'Home', tabBarColor: '#333333'}}
       />
       <MainStack.Screen
         name="TeamStackScreen"
         component={TeamStackScreen}
-        options={{tabBarLabel: 'Team'}}
+        options={{tabBarLabel: 'Team', tabBarColor: '#0099cc'}}
       />
       <MainStack.Screen
         name="MatchStackScreen"
         component={MatchStackScreen}
-        options={{tabBarLabel: 'Match'}}
+        options={{tabBarLabel: 'Match', tabBarColor: '#999999'}}
       />
       <MainStack.Screen
         name="RankStackScreen"
         component={RankStackScreen}
-        options={{tabBarLabel: 'Rank'}}
+        options={{tabBarLabel: 'Rank', tabBarColor: '#0099cc'}}
       />
       <MainStack.Screen
         name="Preference"
         component={ProfileScreen}
-        options={{tabBarLabel: 'faCog'}}
+        options={{tabBarLabel: 'Stadium', tabBarColor: '#333333'}}
       />
     </MainStack.Navigator>
   );

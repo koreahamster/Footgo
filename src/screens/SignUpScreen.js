@@ -4,8 +4,7 @@ import styled from 'styled-components';
 
 import ImagePicker from 'react-native-image-crop-picker';
 
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faPlus} from '@fortawesome/free-solid-svg-icons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {FirebaseContext} from '../context/FirebaseContext';
 import {UserContext} from '../context/UserContext';
@@ -37,7 +36,6 @@ export default SignUpScreen = ({navigation}) => {
       });
   };
 
-
   const signUp = async () => {
     setLoading(true);
 
@@ -67,7 +65,7 @@ export default SignUpScreen = ({navigation}) => {
           <ProfilePhoto source={{uri: profilePhoto}} />
         ) : (
           <DefaultProfilePhoto>
-            <FontAwesomeIcon icon={faPlus} size={24} color="#ffffff" />
+            <MaterialCommunityIcons name="plus" color="#ffffff" size={26} />
           </DefaultProfilePhoto>
         )}
       </ProfilePhotoContainer>

@@ -56,5 +56,12 @@
 
 		<key>NSPhotoLibraryUsageDescription</key>
 		<string>PhotoLibraryUsageDescription</string>
+
+		<key>UIAppFonts</key>
+		<array>
+			<string>FontAwesome.ttf</string>
+			<string>MaterialCommunityIcons.ttf</string>
+			<string>Ionicons</string>
+		</array>
 	</dict>
 </plist>
